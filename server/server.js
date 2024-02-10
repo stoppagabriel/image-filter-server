@@ -11,7 +11,7 @@ server.on('connection', (socket) => {
     console.log('Connected to the server', socket.address());
     const clientISHP = new ISHP();
 
-    socket.write(Object.keys(Filters).join('\n'));
+    // socket.write(Object.keys(Filters).join('\n'));
 
     sockets.push({
         client: socket,

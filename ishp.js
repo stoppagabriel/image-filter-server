@@ -1,5 +1,5 @@
 /*
-    ISHP
+    ISHP Protocol
     [WRAP START] - 2 bytes [0 - 1] - 0xac 0xbc
     [OPTION] - 8 bytes [2 - 9]
     [DATA]  - undefined bytes [10 - n]

@@ -1,6 +1,7 @@
 const net = require('net');
 const filter = require('./filter');
 const ISHP = require('../ishp');
+const Filters = require('./filters/Filters');
 
 const server = net.createServer();
 const sockets = [];
@@ -9,6 +10,8 @@ let id = 0;
 server.on('connection', (socket) => {
     console.log('Connected to the server', socket.address());
     const clientISHP = new ISHP();
+
+    socket.write(Object.keys(Filters).join('\n'));
 
     sockets.push({
         client: socket,

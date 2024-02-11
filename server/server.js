@@ -21,11 +21,12 @@ server.on('connection', (socket) => {
 
     clientISHP.on('streamEnd', async () => {
         const result = await filter(clientISHP.lastReceivedData.image, clientISHP.lastReceivedData.option);
-        clientISHP.clear();
 
         socket.write(
             ISHP.wrap(clientISHP.lastReceivedData.option, result)
         );
+
+        clientISHP.clear();
     })
     
     socket.on('data', async (data) => {

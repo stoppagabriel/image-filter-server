@@ -42,7 +42,7 @@ module.exports = class ISHP extends EventEmitter {
                 end
             }
 
-            this.emit('streamEnd');
+            this.emit('streamEnd', this.lastReceivedData.image);
         }
     }
 
